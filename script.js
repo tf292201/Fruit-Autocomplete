@@ -1,5 +1,5 @@
 const input = document.querySelector('#fruit');
-const suggestions = document.querySelector('.suggestions ul');
+const suggestions = document.querySelector('#list');
 const ul = document.querySelector('#list');
 const results = [];
 
@@ -17,16 +17,21 @@ const fruits = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Black
 // }
 
 function searchHandler(e) {
-	inputVal = e.target.value.toLowerCase()
-  if (inputVal.length < 3) {while(ul.firstChild){ul.removeChild(ul.firstChild);}};
+	// inputVal = e.target.value.toLowerCase()
+
+  let inputVal = "";
+  inputVal += e.target.value.toLowerCase();
+  //removes li's created by filtered array
+  console.log(inputVal);
+  while (ul.firstChild){ul.removeChild(ul.firstChild);}
   
-  if (inputVal.length === 3) 
-  {
 	let results = fruits.filter(function(fruit){return fruit.toLowerCase().includes(inputVal.toLowerCase());});
   console.log(results);
 	if (inputVal)
   {showSuggestions(results, inputVal);}
-}}
+}
+
+// }
 
 function showSuggestions(results, inputVal) {
 	
@@ -35,22 +40,23 @@ function showSuggestions(results, inputVal) {
   
   results.forEach(item => { 
   const li = document.createElement('li');
-   li.style.cursor = "pointer";
    li.textContent = item;
    ul.appendChild(li); 
-	 ul.classList.add("has-suggestions")
-   inputVal = "";})
-  ;}
+	 ul.classList.add("has-suggestions");
+   inputVal = "";})}
   
 
 	// TODO
 	
 
 function useSuggestion(e) {
-	// TODO
+  let choice = document.querySelector("#fruit");
+  choice.value = e.target.textContent;
+  while(ul.firstChild){ul.removeChild(ul.firstChild);}
+  console.log(choice.value);
 }
 //removes suggestions from ul when blurred.
-input.addEventListener('blur', function() {while(ul.firstChild){ul.removeChild(ul.firstChild);}});
+// input.addEventListener('blur', function() {while(ul.firstChild){ul.removeChild(ul.firstChild);}});
 
 input.addEventListener('keyup', searchHandler);
 
