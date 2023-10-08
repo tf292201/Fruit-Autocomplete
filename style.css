@@ -37,8 +37,6 @@ input::placeholder{
   color: black;
 }
 
-
-
 .search-container {
   padding-bottom:0px;
   display: flex;
@@ -59,15 +57,12 @@ input::placeholder{
 .search-container input,
 .search-container .suggestions {
 
-  
-  
 }
+
 .search-container input {
  /* TODO */
 }
-.search-container .suggestions {
-   /* TODO */
-}
+.search-container .suggestions {}
 
 ul { 
 height: 0p
@@ -91,21 +86,16 @@ ul li:hover {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  background-color: lightgray;
+  background-color: rgb(255, 251, 251);
 }
 
 input:focus{
    outline: none;
    background-color: rgb(134, 205, 252);
 }
-.suggestions{
-  /* position:absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  width: 250px;
-  border-radius: 5px; */
-}
+
+.suggestions{}
+
 .bottomradius{
   border-radius: 5px 5px 0px 0px;
 }
@@ -114,7 +104,7 @@ input:focus{
   top: 100%;
   left: 0;
   width: 150px;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   box-shadow: 0px 1px 4px rgba(0,0,0,1);
   background-image: linear-gradient(to right, rgb(132, 186, 247) , rgb(234, 242, 248));
   
