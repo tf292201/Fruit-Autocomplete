@@ -39,10 +39,11 @@ function showSuggestions(results, inputVal) {
 	 ul.classList.add("has-suggestions");
 
    if (ul.firstChild)
-   {input.classList.add("bottomradius")}
+  {input.classList.add("bottomradius")}
 
   })}
   
+
 function useSuggestion(e) {
   let choice = document.querySelector("#fruit");
   choice.value = e.target.textContent;

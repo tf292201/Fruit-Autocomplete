@@ -92,6 +92,7 @@ ul li:hover {
 input:focus{
    outline: none;
    background-color: rgb(134, 205, 252);
+   
 }
 
 .suggestions{}
