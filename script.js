@@ -11,7 +11,7 @@ const fruits = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Black
 // 	return results;
 // }
 
-function searchHandler(e) {
+const searchHandler = (e) => {
   let inputVal = "";
   inputVal += e.target.value.toLowerCase();
   console.log(inputVal);
@@ -21,17 +21,17 @@ function searchHandler(e) {
 
   while (ul.firstChild){ul.removeChild(ul.firstChild);}
   
-	let results = fruits.filter(function(fruit){return fruit.toLowerCase().includes(inputVal.toLowerCase());});
+	let results = fruits.filter(fruit => fruit.toLowerCase().includes(inputVal));
   console.log(results);
 
   if(results.length === 0)
   {input.classList.remove("bottomradius");}
 
 	if (inputVal)
-  {showSuggestions(results, inputVal);}
+  {showSuggestions(results);}
 }
 
-function showSuggestions(results, inputVal) {
+function showSuggestions(results) {
   results.forEach(item => { 
   const li = document.createElement('li');
    li.textContent = item;
